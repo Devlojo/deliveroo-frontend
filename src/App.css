@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 :root {
   --grey: #868a8a;
+  --green-blue: #00ccbc;
 }
 /* GENERAL */
 
@@ -76,10 +77,6 @@ main > div {
   flex: 1;
 }
 
-.column-right {
-  width: 350px;
-}
-
 .meals-container {
   display: flex;
   flex-wrap: wrap;
@@ -97,8 +94,13 @@ article {
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
+  transition-duration: 0.3s;
 }
 
+article:hover {
+  cursor: pointer;
+  box-shadow: 0 20px 20px 0 lightgrey;
+}
 article img {
   height: 130px;
   width: 130px;
@@ -117,10 +119,6 @@ article img {
   margin-top: 30px;
 }
 
-img {
-  height: 100px;
-}
-
 h2 {
   font-weight: bold;
 }
@@ -128,4 +126,96 @@ h2 {
 .description {
   color: var(--grey);
   font-size: 14px;
+}
+
+/*PANIER */
+
+.column-right {
+  width: 350px;
+  background-color: white;
+  min-height: 200px;
+  border-radius: 5px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.cart-container {
+  background-color: #f3f5f5;
+}
+.empty {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+
+  text-align: center;
+  background-color: #bac3c3;
+}
+.full {
+  padding: 20px;
+  border-radius: 5px;
+  border: none;
+
+  text-align: center;
+  background-color: var(--green-blue);
+  color: white;
+  font-weight: bold;
+}
+
+.cart-list {
+  padding: 20px 0;
+  display: flex;
+}
+
+.subtotal {
+  padding: 0 5px;
+  border-top: 1px solid #f4f5f5;
+  border-bottom: 1px solid #f4f5f5;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: 15px;
+}
+
+.subtotal span {
+  padding: 15px 0;
+}
+
+.total {
+  padding: 15px 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+  align-items: center;
+}
+
+.cart-list li {
+  display: flex;
+  align-items: center;
+}
+
+li button {
+  border-radius: 50px;
+  background-color: white;
+  border: 2px solid var(--green-blue);
+  color: var(--green-blue);
+  padding: 2px 7px;
+  margin: 0 8px;
+}
+
+li button:hover {
+  cursor: pointer;
+}
+
+.price-cart {
+  text-align: right;
+  width: 142px;
 }
